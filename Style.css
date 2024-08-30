@@ -39,13 +39,18 @@ h3{
     margin-bottom: 0.5em;
 }
 
+.container{
+    width: 85%;
+    margin: auto;
+}
+
 .clear-fix{
     clear: both;
 }
 /* ! Body Content */
 /* ?===============Start Of header=============== */
 main{
-    padding: 5em;
+    padding: 5em 0.4em 0em;
     height: 100vh;
 }
 header{
@@ -63,59 +68,247 @@ header p:nth-child(2){
 }
 header p:last-child{
     font-family:'popEL';
-    width: 30%;
-    margin: auto;
+    width: 35%;
+    margin: 1em auto;
 }
 
 /* ?===============Start Of main Section=============== */
 /* Skills Container */
-section#skills {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    margin: 4em auto;    
-    gap: 2em;
-}
-/* Supervisor And Calculator  */
-section#skills > div:not(.tk){
-    width: 27%;
-    padding: 2em;
-    background-color:white;
-}
-section#skills div:first-child{
-    border-top:0.4em solid var(--Cyan) ;
-}
-section#skills .tk div:first-child{
-    border-top:0.4em solid var(--Red) ;
-}
-section#skills .tk div:last-child{
-    border-top:0.4em solid var(--Orange) ;
-}
-section#skills div:last-child{
-    border-top:0.4em solid var(--Blue) ;
-}
-section#skills  img{
-float: right;    
-}
-
-
-section#skills p{
-    font-family:'popR';
-    margin-bottom: 2em;
-}
-/* Middle Section */
-section#skills .tk {
-    width: 27%;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-}
-section#skills .tk >div {
+section.skills {
     width: 100%;
-    padding: 2em;
-    background-color:white;
-    border-top:0.4em solid var(--Cyan) ;
+    display: grid;
+    grid-template-columns: repeat(3, 28%);
+    grid-template-rows:repeat(2 , auto);
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-top: 5em;
 }
 
+.card{
+    border-radius: 0.5em;
+    padding: 2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+    0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease; /* Smooth transition */
+}
+.card:hover {
+    /* Slightly larger shadow on hover for a pop effect */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15), 
+                0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img{
+    margin-top:2em ;
+}
+.card p{
+    font-family:'popEL';
+
+}
+
+section.skills .sup{
+    border-top: 0.4em solid var(--Cyan) ;
+}
+section.skills .team{
+    border-top: 0.4em solid var(--Red) ;
+}
+section.skills .karma{
+    border-top: 0.4em solid var(--Orange) ;
+}
+section.skills .cal{
+    border-top: 0.4em solid var(--Blue) ;
+}
+
+section.skills .sup{
+    grid-column: 1/2 ;
+    grid-row: 1/3 ;
+}
+section.skills .karma{
+    grid-column: 2/3 ;
+    grid-row: 2/3 ;
+}
+section.skills .cal{
+    grid-column: 3/4 ;
+    grid-row: 1/3 ;
+}
+
+/* ! Media Qery */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container{
+        width: 100%;
+    }
+    header p:first-child{
+        font-size: 30px;
+    }
+    header p:nth-child(2){
+        font-size: 30px;
+    }
+    header p:last-child{
+        font-family:'popEL';
+        width: 100%;
+    }
+
+    section.skills {
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
+    section.skills .sup{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+    section.skills .karma{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+    section.skills .cal{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .container{
+        width: 100%;
+    }
+    header p:first-child{
+        font-size: 30px;
+    }
+    header p:nth-child(2){
+        font-size: 30px;
+    }
+    header p:last-child{
+        font-family:'popEL';
+        font-size: 20px;
+        width: 100%;
+    }
+
+    section.skills {
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
+    section.skills .sup{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+    section.skills .karma{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+    section.skills .cal{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .container{
+        width: 100%;
+    }
+    header p:first-child{
+        font-size: 30px;
+    }
+    header p:nth-child(2){
+        font-size: 30px;
+    }
+    header p:last-child{
+        font-family:'popEL';
+        font-size: 20px;
+        width: 100%;
+    }
+
+    section.skills {
+        grid-template-columns: repeat(2, 50%);
+        align-items: stretch;
+        gap: 1em;
+        padding: 0em 1em;
+    }
+    section.skills .sup{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+    section.skills .karma{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+    section.skills .cal{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container{
+        width: 100%;
+    }
+    header p:first-child{
+        font-size: 30px;
+    }
+    header p:nth-child(2){
+        font-size: 30px;
+    }
+    header p:last-child{
+        font-family:'popEL';
+        font-size: 20px;
+        width: 100%;
+    }
+
+    section.skills {
+        grid-template-columns: repeat(2, 50%);
+        align-items: stretch;
+        gap: 1em;
+        padding: 0em 1em;
+    }
+    section.skills .sup{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+    section.skills .karma{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+    section.skills .cal{
+        grid-column: auto ;
+        grid-row: auto ;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .container{
+        width: 100%;
+    }
+    header p:first-child{
+        font-size: 35px;
+    }
+    header p:nth-child(2){
+        font-size: 35px;
+    }
+    header p:last-child{
+        font-family:'popEL';
+        width: 40%;
+    }
+
+    section.skills {
+        grid-template-columns: repeat(3, 28%);
+        align-items: center;
+        gap: 2em;
+        padding: 0em 1em;
+    }
+    section.skills .sup{
+        grid-column: 1/2 ;
+        grid-row: 1/3 ;
+    }
+    section.skills .karma{
+        grid-column: 2/3 ;
+        grid-row: 2/3 ;
+    }
+    section.skills .cal{
+        grid-column: 3/4 ;
+        grid-row: 1/3 ;
+    }
+}
 
