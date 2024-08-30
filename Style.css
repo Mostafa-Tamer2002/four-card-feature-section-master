@@ -1,0 +1,121 @@
+/* ! Import */
+@font-face {
+    font-family:'popEL';
+    src: url(./Fonts/Poppins-ExtraLight.ttf);
+    font-weight: 200;
+}
+@font-face {
+    font-family:'popR';
+    src: url(./Fonts/Poppins-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family:'popSB';
+    src: url(./Fonts/Poppins-SemiBold.ttf);
+    font-weight: 600;
+
+}
+/* ! Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ! Global Content */
+:root{
+    --Red:hsl(0, 78%, 62%);
+    --Cyan:hsl(180, 62%, 55%);
+    --Orange:hsl(34, 97%, 64%);
+    --Blue:hsl(212, 86%, 64%);
+
+}
+body{
+    font-size: 15px;
+    line-height: 1.6;
+    background-color:whitesmoke;
+}
+h3{
+    font-family:'popSB';
+    margin-bottom: 0.5em;
+}
+
+.clear-fix{
+    clear: both;
+}
+/* ! Body Content */
+/* ?===============Start Of header=============== */
+main{
+    padding: 5em;
+    height: 100vh;
+}
+header{
+    text-align: center;
+    margin: auto;
+}
+
+header p:first-child{
+    font-size: 35px;
+    font-family:'popEL';
+}
+header p:nth-child(2){
+    font-size: 35px;
+    font-family:'popSB';
+}
+header p:last-child{
+    font-family:'popEL';
+    width: 30%;
+    margin: auto;
+}
+
+/* ?===============Start Of main Section=============== */
+/* Skills Container */
+section#skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 4em auto;    
+    gap: 2em;
+}
+/* Supervisor And Calculator  */
+section#skills > div:not(.tk){
+    width: 27%;
+    padding: 2em;
+    background-color:white;
+}
+section#skills div:first-child{
+    border-top:0.4em solid var(--Cyan) ;
+}
+section#skills .tk div:first-child{
+    border-top:0.4em solid var(--Red) ;
+}
+section#skills .tk div:last-child{
+    border-top:0.4em solid var(--Orange) ;
+}
+section#skills div:last-child{
+    border-top:0.4em solid var(--Blue) ;
+}
+section#skills  img{
+float: right;    
+}
+
+
+section#skills p{
+    font-family:'popR';
+    margin-bottom: 2em;
+}
+/* Middle Section */
+section#skills .tk {
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+section#skills .tk >div {
+    width: 100%;
+    padding: 2em;
+    background-color:white;
+    border-top:0.4em solid var(--Cyan) ;
+}
+
+
